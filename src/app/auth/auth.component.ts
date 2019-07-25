@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class AuthComponent implements OnInit {
   message;
   errorMessage;
-  isLogin = false;
+  isLoginErrorMessage = false;
   constructor( private authService: AuthService,private router: Router) { }
 
   ngOnInit() {
@@ -23,13 +23,13 @@ export class AuthComponent implements OnInit {
     this.authService.signup(email,password).subscribe(resdata =>{
       console.log(resdata);
       this.message = resdata;
-      this.router.navigate(['welcome']);
+      this.router.navigate(['login']);
 
     },
     errorRes =>{
       this.errorMessage = errorRes.error.error.message;
       console.log(this.errorMessage);
-      this.isLogin = true;
+      this.isLoginErrorMessage = true;
     });
     form.reset();
   }

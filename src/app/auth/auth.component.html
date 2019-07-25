@@ -1,5 +1,5 @@
 <div class="container">
-<div class="alert alert-danger" *ngIf="isLogin">
+<div class="alert alert-danger" *ngIf="isLoginErrorMessage">
    {{errorMessage}}
 </div>
 <form #authForm="ngForm" (ngSubmit)="authSubmit(authForm)">
@@ -11,6 +11,6 @@
       <label for="password">Password:</label>
       <input type="password" class="form-control" name="password" id="password" ngModel required>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!authForm.valid">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!authForm.valid">Sign Up</button>
   </form>
 </div>
