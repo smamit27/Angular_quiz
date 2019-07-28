@@ -36,7 +36,6 @@ export class ConfirmpasswordComponent implements OnInit {
       debugger;
       this.errorMessageReset = errorRes.error.error.message;
       console.log(this.errorMessageReset);
-      // this.isLoginErrorMessage = true;
     });
     form.reset();
 }
