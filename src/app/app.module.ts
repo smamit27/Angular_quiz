@@ -7,6 +7,9 @@ import { QuizComponent } from './quiz/quiz.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AuthComponent } from './auth/auth.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.component';
 
 
 @NgModule({
@@ -14,7 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent, 
     QuizComponent,
     WelcomeComponent,
-    AuthComponent
+    AuthComponent,
+    LoginComponent,
+    ResetPasswordComponent,
+    ConfirmpasswordComponent
   ],
   imports: [
     BrowserModule,

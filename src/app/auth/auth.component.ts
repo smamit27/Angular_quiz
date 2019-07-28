@@ -33,5 +33,10 @@ export class AuthComponent implements OnInit {
     });
     form.reset();
   }
+  loginForm(){
+    this.router.navigate(['login']);
+
+
+  }
 
 }
