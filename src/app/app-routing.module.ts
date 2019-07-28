@@ -12,7 +12,7 @@ import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.comp
 const routes: Routes = [
   {path: 'welcome',component: WelcomeComponent},
   {path:'quiz', component: QuizComponent},
-  {path: 'auth',component: AuthComponent},
+  {path: 'signup',component: AuthComponent},
   { path: 'login', component: LoginComponent},
   {path: 'resetPassword',component: ResetPasswordComponent},
   {path: 'confirmPassword',component: ConfirmpasswordComponent},

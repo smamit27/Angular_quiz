@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
 
     },
     errorRes =>{
-      debugger;
       this.errorMessageLogin = errorRes.error.error.message;
       console.log(this.errorMessageLogin);
       this.isLoginErrorMessage = true;
@@ -33,5 +32,8 @@ export class LoginComponent implements OnInit {
   }
   resetPassword(){
     this.router.navigate(['resetPassword'])
+  }
+  signup() {
+    this.router.navigate(['signup']);
   }
 }

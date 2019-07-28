@@ -42,13 +42,11 @@ export class AuthService {
     })
   }
   verifyResetPassword(oobCode: string) {
-    debugger;
     return this.http.post<ResetPassword>('https://identitytoolkit.googleapis.com/v1/accounts:resetPassword?key=AIzaSyDTQiG3dA0EADCgkpJ3PN3P5KZQso7JIo0',{
       oobCode: oobCode
     })
   }
   confirmPassword(newpassword: string,occ:string){
-    debugger;
     return this.http.post<ResetPassword>('https://identitytoolkit.googleapis.com/v1/accounts:resetPassword?key=AIzaSyDTQiG3dA0EADCgkpJ3PN3P5KZQso7JIo0',{
       oobCode: occ,
       newPassword: newpassword

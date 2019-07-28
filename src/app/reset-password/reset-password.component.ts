@@ -15,13 +15,11 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit() {
   }
   resetPass(form:NgForm) {
-    debugger;
    const email = form.value.email;
    this.authService.signreset(email).subscribe(resdata =>{
     console.log(resdata);
   },
   errorRes =>{
-    debugger;
     this.errorMessageReset = errorRes.error.error.message;
     console.log(this.errorMessageReset);
     // this.isLoginErrorMessage = true;

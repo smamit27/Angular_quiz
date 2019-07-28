@@ -19,7 +19,6 @@ export class ConfirmpasswordComponent implements OnInit {
       console.log(resdata);  
     },
     errorRes =>{
-      debugger;
       this.errorMessageReset = errorRes.error.error.message;
       console.log(this.errorMessageReset);
     });
@@ -28,12 +27,10 @@ export class ConfirmpasswordComponent implements OnInit {
     const password = form.value.password;
     this.authService.confirmPassword(password,this.occvalue ).subscribe(resdata =>{
       console.log(resdata);
-      debugger;
       this.router.navigate(['login']);
   
     },
     errorRes =>{
-      debugger;
       this.errorMessageReset = errorRes.error.error.message;
       console.log(this.errorMessageReset);
     });
