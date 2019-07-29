@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { FakeService } from '../fake.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   errorMessageLogin:string;
   isLoginErrorMessage:boolean;
-  constructor( private authService: AuthService,private router: Router) { }
+  constructor( private authService: AuthService,private router: Router,private fakeService: FakeService) { }
 
   ngOnInit() {
   }
@@ -19,8 +20,8 @@ export class LoginComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     this.authService.signin(email,password).subscribe(resdata =>{
-      console.log(resdata);
-      this.router.navigate(['welcome'])
+      this.fakeService.isLogin();
+      this.router.navigate(['welcome']);
 
     },
     errorRes =>{

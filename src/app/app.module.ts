@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.component';
+import { AuthGuard } from './auth-guard.service';
+import { FakeService } from './fake.service';
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.comp
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard,FakeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
