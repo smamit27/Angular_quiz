@@ -102,3 +102,25 @@
         transform: rotate(360deg);
     }
 }
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .wheel{
+      
+        bottom: 160px;
+        
+    }
+    .car img {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .wheel img {
+        width: 55px;
+        height:55px;
+    }
+    .wheel-back {
+        left: -130px;
+    }
+    
+    .wheel-front {
+        left: 65px;
+    }
+  }
