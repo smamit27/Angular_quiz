@@ -1,9 +1,9 @@
 .lds-dual-ring {
   display: inline-block;
-  width: 50%;
+  width: 64px;
   height: 64px;
   position: absolute;
-  margin: 0px auto;
+  margin: 60px auto;
   z-index: 10000;
   }
   .lds-dual-ring:after {
