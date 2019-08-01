@@ -12,7 +12,7 @@
 }
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     html {
-    background-color: #000000;
+    background-color: #212121;
     background-image: url('./assets/image/sValK.png');
     background-size: 100%;
     background-repeat: no-repeat;
