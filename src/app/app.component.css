@@ -15,7 +15,7 @@
     overflow-x: hidden;
 }
 .highway {
-    width: 500%;
+    width: 1000%;
     height: 200px;
     display: block;
     background-image:url('../assets/image/road.jpg');
@@ -26,7 +26,6 @@
     right: 0;
     background-repeat: repeat-x;
     animation: highway 5s linear infinite;
-
 }
 @keyframes highway {
     100%{

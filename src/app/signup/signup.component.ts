@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class AuthComponent implements OnInit {
+export class SignupComponent implements OnInit {
   message;
   errorMessage;
   isLoginErrorMessage = false;
