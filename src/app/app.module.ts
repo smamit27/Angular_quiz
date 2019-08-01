@@ -12,6 +12,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.component';
 import { AuthGuard } from './auth-guard.service';
 import { FakeService } from './fake.service';
+import { LoaderComponent } from './loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -20,7 +21,8 @@ import { FakeService } from './fake.service';
     SignupComponent,
     LoginComponent,
     ResetPasswordComponent,
-    ConfirmpasswordComponent
+    ConfirmpasswordComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

@@ -13,21 +13,25 @@ export class SignupComponent implements OnInit {
   message;
   errorMessage;
   isLoginErrorMessage = false;
+  loaderShow = false;
   constructor( private authService: AuthService,private router: Router) { }
 
   ngOnInit() {
   }
   authSubmit(form: NgForm) {
+    this.loaderShow = true;
     const email = form.value.email;
     const password = form.value.password;
     this.authService.signup(email,password).subscribe(resdata =>{
       console.log(resdata);
+      this.loaderShow = false;
       this.message = resdata;
       this.router.navigate(['login']);
 
     },
     errorRes =>{
       this.errorMessage = errorRes.error.error.message;
+      this.loaderShow = false;
       console.log(this.errorMessage);
       this.isLoginErrorMessage = true;
     });
