@@ -28,7 +28,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     }
-    .hero {
+    .hero,app-signup,app-signup,app-login,app-welcome,app-confirmpassword,app-reset-password{
         display: none;
     }
   }

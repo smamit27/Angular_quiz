@@ -15,9 +15,7 @@ export class SignupComponent implements OnInit {
   isLoginErrorMessage = false;
   loaderShow = false;
   constructor( private authService: AuthService,private router: Router) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() { }
   authSubmit(form: NgForm) {
     this.loaderShow = true;
     const email = form.value.email;
