@@ -13,6 +13,7 @@ import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.comp
 import { AuthGuard } from './auth-guard.service';
 import { FakeService } from './fake.service';
 import { LoaderComponent } from './loader/loader.component';
+import { MessageService } from './message.service';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -30,7 +31,7 @@ import { LoaderComponent } from './loader/loader.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthGuard,FakeService],
+  providers: [AuthGuard,FakeService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

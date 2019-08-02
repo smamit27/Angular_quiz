@@ -2,14 +2,17 @@
 .form-gap {
     padding-top: 70px;
 }
+.form-action{
+    position: absolute;
+    z-index: 19999;
+    top:0px;
+    width:100%;
+}
 .ba {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.bg-index{
-    position: relative;
-    z-index: 9999;
-}
+
 .loader-center{
     text-align: center;
     background: #ffffff82;

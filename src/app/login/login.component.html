@@ -1,9 +1,9 @@
-<div class="fluid mt-3 bg-index">
+<div class="fluid form-action mt-3">
    <div class="loader-center" *ngIf="loaderShow">  <app-loader></app-loader> </div>
     <div class="alert alert-danger col-sm-12 col-md-8 col-lg-6 mx-auto" *ngIf="isLoginErrorMessage">
         {{errorMessageLogin}}
     </div>
-    <form #authLoginForm="ngForm" (ngSubmit)="authLoginSubmit(authLoginForm)">
+    <form #authLoginForm="ngForm" (ngSubmit)="authLoginSubmit(authLoginForm)" >
         <div class="col-sm-12 col-md-8 col-lg-6 mx-auto ba">
             <div class="form-group mt-3">
                 <label for="email">Login Email</label>

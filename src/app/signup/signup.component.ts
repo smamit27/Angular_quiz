@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  message;
-  errorMessage;
+  message: any;
+  errorMessage: string;
   isLoginErrorMessage = false;
   loaderShow = false;
   constructor( private authService: AuthService,private router: Router) { }

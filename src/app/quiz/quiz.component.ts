@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FakeService } from '../fake.service';
 import { Router } from '@angular/router';
+import { MessageService } from '../message.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -10,11 +12,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
+  messages: string;
   title = 'quiz';
-  results: number
+  results: number;
   quizForm: FormGroup;
   correctAnswer = ['A', 'B', 'B', 'A', 'A'];
-  constructor(private fakeService: FakeService,private router: Router){}
+  constructor(private fakeService: FakeService,private router: Router,private messageService: MessageService){}
   ngOnInit() {
     this.quizForm = new FormGroup({
       'q1': new FormControl(null),
@@ -22,8 +25,8 @@ export class QuizComponent implements OnInit {
       'q3': new FormControl(null),
       'q4': new FormControl(null),
       'q5': new FormControl(null)
-    })
-  };
+    });
+};
   questions = [
     {
       "id": '1',
@@ -96,7 +99,7 @@ export class QuizComponent implements OnInit {
       }
     }, 20)
     this.fakeService.isLogout();
-    this.router.navigate(['login']);
+    // this.router.navigate(['login']);
   }
 
 

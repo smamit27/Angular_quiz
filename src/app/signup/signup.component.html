@@ -1,22 +1,25 @@
-<div class="fluid mt-3 bg-index">
-    <div class="loader-center" *ngIf="loaderShow">  <app-loader></app-loader> </div>
-<div class="alert alert-danger col-sm-12 col-md-8 col-lg-6 mx-auto" *ngIf="isLoginErrorMessage">
-   {{errorMessage}}
-</div>
-<form #authForm="ngForm" (ngSubmit)="authSubmit(authForm)">
-  <div class="col-sm-12 col-md-8 col-lg-6 mx-auto ba">
-  <div class="form-group mt-3">
-      <label for="email">Your Email</label>
-      <input type="email" class="form-control" id="email" name="email" ngModel email required>
-    </div>
-    <div class="form-group mt-3">
-      <label for="password">Your Password</label>
-      <input type="password" class="form-control" name="password" id="password" ngModel required>
-    </div>
-    <div class="mb-1">
-    <button type="submit" class="btn btn-primary col-md-3 col-sm-12 mr-1 mb-2" [disabled]="!authForm.valid">Sign Up</button>
-    <button (click)="loginForm()" class="btn btn-primary col-md-2 col-sm-12 mr-1 mb-2 ">Login</button>
+<div class="fluid form-action mt-3">
+  <div class="loader-center" *ngIf="loaderShow">
+    <app-loader></app-loader>
   </div>
+  <div class="alert alert-danger col-sm-12 col-md-8 col-lg-6 mx-auto" *ngIf="isLoginErrorMessage">
+    {{errorMessage}}
   </div>
+  <form #authForm="ngForm" (ngSubmit)="authSubmit(authForm)">
+    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto ba">
+      <div class="form-group mt-3">
+        <label for="email">Your Email</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel email required>
+      </div>
+      <div class="form-group mt-3">
+        <label for="password">Your Password</label>
+        <input type="password" class="form-control" name="password" id="password" ngModel required>
+      </div>
+      <div class="mb-1">
+        <button type="submit" class="btn btn-primary col-md-3 col-sm-12 mr-1 mb-2" [disabled]="!authForm.valid">Sign
+          Up</button>
+        <button (click)="loginForm()" class="btn btn-primary col-md-2 col-sm-12 mr-1 mb-2 ">Login</button>
+      </div>
+    </div>
   </form>
 </div>

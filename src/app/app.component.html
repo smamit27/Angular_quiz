@@ -1,14 +1,13 @@
 
-<div class="hero">
+<div class="hero" *ngIf="!hideOnQuizScreen">
     <div class="highway"></div>
     <div class="city"></div>
     <div class="car">
         <img src="assets/image/car.png">
     </div>
-    <router-outlet></router-outlet>
     <div class="wheel">
         <img src="assets/image/wheel.png" class="wheel-back">
         <img src="assets/image/wheel.png" class="wheel-front">
     </div>
-
 </div>
+<router-outlet></router-outlet>
