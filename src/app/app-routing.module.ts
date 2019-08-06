@@ -7,17 +7,19 @@ import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.component';
 import { AuthGuard } from './auth-guard.service';
+import { PhoneLoginComponent } from './phone-login/phone-login.component';
 
 
 
 const routes: Routes = [
-  {path: 'welcome',canActivate:[AuthGuard],component: WelcomeComponent},
-  {path:'quiz',canActivate:[AuthGuard], component: QuizComponent},
+  {path: 'welcome',component: WelcomeComponent},
+  {path:'quiz',component: QuizComponent},//canActivate:[AuthGuard], 
+  {path:'phone', component: PhoneLoginComponent},
   {path: 'signup',component: SignupComponent},
   { path: 'login', component: LoginComponent},
   {path: 'resetPassword',component: ResetPasswordComponent},
   {path: 'confirmPassword',canActivate:[AuthGuard],component: ConfirmpasswordComponent},
-  {path: '**', component: SignupComponent},
+  {path: '**', component: LoginComponent},
 ];
 
 

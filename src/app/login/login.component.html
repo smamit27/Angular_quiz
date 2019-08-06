@@ -14,10 +14,19 @@
                 <input type="password" class="form-control" name="password" id="password" ngModel required>
             </div>
             <div class="mb-1">
+                    <a class="fa fa-facebook"></a>
+                    <a class="fa fa-twitter"></a>
+                    <a (click)="doGoogle()" class="fa fa-google"></a>
+                    <a  class="fa fa-linkedin"></a>
+<!-- 
                 <button type="submit" class="btn btn-primary col-md-2 col-sm-12 mr-1 mb-2" [disabled]="!authLoginForm.valid">Login</button>
                 <button (click)="signup()" class="btn btn-primary col-md-3 mr-1 mb-2">Sign Up </button>
                 <button (click)="resetPassword()" class="btn btn-primary col-md-6 col-sm-12 mb-2">Forget Password</button>
+  -->
             </div>
         </div>
     </form>
+
+    <button (click)="doGoogle()" class="btn btn-primary col-md-6 col-sm-12 mb-2">GOOGLE</button>
+
 </div>

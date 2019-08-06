@@ -3,6 +3,9 @@ import {NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { FakeService } from '../fake.service';
+import { AuthenticationService } from '../shared/authentication.service';
+import { debugOutputAstAsTypeScript } from '@angular/compiler';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +16,16 @@ export class LoginComponent implements OnInit {
   errorMessageLogin:string;
   isLoginErrorMessage:boolean;
   loaderShow:boolean = false;
-  constructor( private authService: AuthService,private router: Router,private fakeService: FakeService) { }
+  constructor( private authService: AuthService,private router: Router,private fakeService: FakeService,private authenticate:AuthenticationService,private afAuth: AngularFireAuth) { }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe(user =>{
+      console.log(user);
+      if(user.email !== null && user.email !== undefined){
+        this.router.navigate(['welcome']);
+
+      }
+    });
   }
   authLoginSubmit(form: NgForm) {
     this.loaderShow = true;
@@ -41,5 +51,8 @@ export class LoginComponent implements OnInit {
   }
   signup() {
     this.router.navigate(['signup']);
+  }
+  doGoogle(){
+    this.authenticate.doGoogleLogin();
   }
 }

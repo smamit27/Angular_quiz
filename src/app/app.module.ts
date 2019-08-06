@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {environment} from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -14,6 +15,11 @@ import { AuthGuard } from './auth-guard.service';
 import { FakeService } from './fake.service';
 import { LoaderComponent } from './loader/loader.component';
 import { MessageService } from './message.service';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { PhoneLoginComponent } from './phone-login/phone-login.component';
+
 @NgModule({
   declarations: [
     AppComponent, 
@@ -23,13 +29,18 @@ import { MessageService } from './message.service';
     LoginComponent,
     ResetPasswordComponent,
     ConfirmpasswordComponent,
-    LoaderComponent
+    LoaderComponent,
+    PhoneLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule
+    
   ],
   providers: [AuthGuard,FakeService,MessageService],
   bootstrap: [AppComponent]
