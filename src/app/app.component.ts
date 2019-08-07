@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from './message.service';
+import { MessageService } from './shared/message.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { of } from 'rxjs';
 

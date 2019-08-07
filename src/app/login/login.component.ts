@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm } from '@angular/forms';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
-import { FakeService } from '../fake.service';
+import { FakeService } from '../shared/fake.service';
 import { AuthenticationService } from '../shared/authentication.service';
 import { debugOutputAstAsTypeScript } from '@angular/compiler';
 import { AngularFireAuth } from '@angular/fire/auth';

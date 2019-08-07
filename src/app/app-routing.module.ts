@@ -6,7 +6,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.component';
-import { AuthGuard } from './auth-guard.service';
+import { AuthGuard } from './shared/auth-guard.service';
 import { PhoneLoginComponent } from './phone-login/phone-login.component';
 
 

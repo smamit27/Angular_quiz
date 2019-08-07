@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { FakeService } from '../fake.service';
+import { FakeService } from '../shared/fake.service';
 import { Router } from '@angular/router';
-import { MessageService } from '../message.service';
+import { MessageService } from '../shared/message.service';
 import { Subscription } from 'rxjs';
 
 
