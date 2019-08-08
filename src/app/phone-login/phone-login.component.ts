@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WindowService } from '../shared/window.service';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 
 export class PhoneNumber {
   country: string;
