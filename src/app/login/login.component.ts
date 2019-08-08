@@ -6,6 +6,7 @@ import { FakeService } from '../shared/fake.service';
 import { AuthenticationService } from '../shared/authentication.service';
 import { debugOutputAstAsTypeScript } from '@angular/compiler';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { of,from } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,12 @@ export class LoginComponent implements OnInit {
   constructor( private authService: AuthService,private router: Router,private fakeService: FakeService,private authenticate:AuthenticationService,private afAuth: AngularFireAuth) { }
 
   ngOnInit() {
+    const ofData = from([2,3,4,5]);
+    ofData.subscribe(
+      apple => console.log(`Resulting an item ${apple}`),
+      err => console.log(`Error an item ${err}`),
+      ()=> console.log(`Complete`)
+      );
     this.afAuth.authState.subscribe(user =>{
       console.log(user);
       if(user.email !== null && user.email !== undefined){
