@@ -19,6 +19,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { PhoneLoginComponent } from './phone-login/phone-login.component';
+import { httpIntercepterProviders } from './http-intercepter';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { PhoneLoginComponent } from './phone-login/phone-login.component';
     AngularFireAuthModule
     
   ],
-  providers: [AuthGuard,FakeService,MessageService],
+  providers: [AuthGuard,FakeService,MessageService,httpIntercepterProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
