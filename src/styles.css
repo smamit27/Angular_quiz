@@ -34,12 +34,18 @@
   }
 
   .fa {
+    border-radius: 50%;
     padding: 20px;
     font-size: 30px;	
     width: auto;
     text-align: center;
     text-decoration: none;
     margin: 5px 2px;
+  }
+  @media only screen and (max-width: 600px) {
+    .fa {
+      padding: 13px;
+    }
   }
   
   .fa:hover {
@@ -53,6 +59,10 @@
   
   .fa-twitter {
     background: #55ACEE;
+    color: white;
+  }
+  .fa-phone {
+    background: #ccc;
     color: white;
   }
   

@@ -7,7 +7,7 @@ export class WindowService {
 
   constructor() { }
   get windowRef() {
-    return window
+    return window;
   }
 
 }

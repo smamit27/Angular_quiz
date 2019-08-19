@@ -20,35 +20,26 @@ export class PhoneNumber {
 })
 export class PhoneLoginComponent implements OnInit {
   
-
   windowRef: any;
-
   phoneNumber = new PhoneNumber()
-
   verificationCode: string;
-
   user: any;
-
+  userData:boolean = false;
   constructor(private win: WindowService) { }
-
   ngOnInit() {
-    this.windowRef = this.win.windowRef
-    this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container')
-
-    this.windowRef.recaptchaVerifier.render()
+    this.windowRef = this.win.windowRef;
+    this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    this.windowRef.recaptchaVerifier.render();
   }
 
 
   sendLoginCode() {
-
     const appVerifier = this.windowRef.recaptchaVerifier;
-
     const num = this.phoneNumber.e164;
-
     firebase.auth().signInWithPhoneNumber(num, appVerifier)
             .then(result => {
-
                 this.windowRef.confirmationResult = result;
+                this.userData = true;
 
             })
             .catch( error => console.log(error) );
@@ -58,8 +49,8 @@ export class PhoneLoginComponent implements OnInit {
   verifyLoginCode() {
     this.windowRef.confirmationResult
                   .confirm(this.verificationCode)
-                  .then( result => {
-
+                  .then(result => {
+                    debugger;
                     this.user = result.user;
 
     })
