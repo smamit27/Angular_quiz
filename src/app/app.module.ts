@@ -20,6 +20,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { PhoneLoginComponent } from './phone-login/phone-login.component';
 import { httpIntercepterProviders } from './http-intercepter';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './parent/child/child.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { httpIntercepterProviders } from './http-intercepter';
     ResetPasswordComponent,
     ConfirmpasswordComponent,
     LoaderComponent,
-    PhoneLoginComponent
+    PhoneLoginComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+{
+    "rows": [
+        {
+            "name" : "Amit",
+            "age" :  20
+        },
+        {
+            "name" : "Sweta",
+            "age" :  10
+        }      
+    ]
+}

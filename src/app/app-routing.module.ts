@@ -12,8 +12,8 @@ import { PhoneLoginComponent } from './phone-login/phone-login.component';
 
 
 const routes: Routes = [
-  {path: 'welcome',canActivate:[AuthGuard],component: WelcomeComponent},
-  {path:'quiz',canActivate:[AuthGuard],component: QuizComponent},//canActivate:[AuthGuard], 
+  {path: 'welcome',component: WelcomeComponent},
+  {path:'quiz',component: QuizComponent},//canActivate:[AuthGuard], 
   {path:'phone', component: PhoneLoginComponent},
   {path: 'signup',component: SignupComponent},
   { path: 'login', component: LoginComponent},
