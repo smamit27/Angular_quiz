@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
     this.afAuth.authState.subscribe(user =>{
       console.log(user);
       if(user.email !== null && user.email !== undefined){
-        debugger;
         this.router.navigate(['welcome']);
 
       }
