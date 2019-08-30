@@ -8,8 +8,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.component';
 import { AuthGuard } from './shared/auth-guard.service';
 import { PhoneLoginComponent } from './phone-login/phone-login.component';
-
-
+import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
   {path: 'welcome',component: WelcomeComponent},
@@ -17,12 +16,11 @@ const routes: Routes = [
   {path:'phone', component: PhoneLoginComponent},
   {path: 'signup',component: SignupComponent},
   { path: 'login', component: LoginComponent},
+  {path: 'parent',component: ParentComponent},
   {path: 'resetPassword',component: ResetPasswordComponent},
   {path: 'confirmPassword',canActivate:[AuthGuard],component: ConfirmpasswordComponent},
   {path: '**', component: LoginComponent},
 ];
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

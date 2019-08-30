@@ -4,9 +4,8 @@ import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
 import { FakeService } from '../shared/fake.service';
 import { AuthenticationService } from '../shared/authentication.service';
-import { AngularFireAuth } from '@angular/fire/auth';
 import {HttpClient} from '@angular/common/http';
-import {Subscription, forkJoin ,Observable} from 'rxjs';
+import { MessageService } from '../shared/message.service';
 
 
 @Component({
@@ -15,16 +14,14 @@ import {Subscription, forkJoin ,Observable} from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private subscription :Array<Subscription> = [];
   errorMessageLogin: string;
   isLoginErrorMessage: boolean;
   loaderShow: boolean = false;
-  columns: any;
-  rows: any;
   constructor(private authService: AuthService, 
               private router: Router, 
               private fakeService: FakeService, 
-              private authenticate: AuthenticationService, 
+              private authenticate: AuthenticationService,
+              private messageService: MessageService,
               private http: HttpClient) { }
 
   ngOnInit() {
@@ -61,11 +58,7 @@ export class LoginComponent implements OnInit {
 
   }
   dolinkedIn() {
-    this.subscription.push(forkJoin([this.http.get("../../assets/json/rows.json"),this.http.get("../../assets/json/columns.json")]).subscribe((data)=>{
-      console.log(data);
-      this.columns = data[1]['columns'];
-      this.rows = data[0]['rows'];
-
-    }));
+    this.messageService.setPractice('practiceData');
+    this.router.navigate(['parent']);   
   }
 }

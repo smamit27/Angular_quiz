@@ -14,4 +14,10 @@ export class MessageService {
   getMessage(): Observable<string> {
      return this.behaviorSubject.asObservable();
   }
+  setPractice(message: string){
+    this.behaviorSubject.next(message);
+  }
+  getPractice(): Observable<string> {
+    return this.behaviorSubject.asObservable();
+ }
 }

@@ -25,26 +25,8 @@
                     <a (click)="doGoogle()" class="fa fa-google"></a>
                     <a class="fa fa-linkedin" (click)="dolinkedIn()"></a>
                     <a class="fa fa-phone" (click)="doPhone()"></a>
-
-               
+             
             </div>
         </div>
     </form>
 </div>
-
-<h1>Foke Join Example</h1>
-<table class="table table-hover">
-    <thead>
-      <tr *ngFor="let col of columns"> 
-        <th scope="col">{{col.name}}</th>
-        <th scope="col">{{col.age}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of rows">
-        <td>{{row.name}}</td>
-        <td>{{row.age}}</td>   
-      </tr>
-    </tbody>
-  </table>
-<app-parent></app-parent>
