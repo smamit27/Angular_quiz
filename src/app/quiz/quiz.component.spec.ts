@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 import { QuizComponent } from './quiz.component';
 
@@ -8,7 +11,9 @@ describe('QuizComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuizComponent ]
+      declarations: [ QuizComponent ],
+      imports: [ ReactiveFormsModule,RouterTestingModule]
+
     })
     .compileComponents();
   }));
