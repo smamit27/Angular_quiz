@@ -27,8 +27,8 @@ export class ParentComponent implements OnInit {
     .subscribe((message:any) => {
     if(message == 'practiceData') {
       this.subscription.push(forkJoin(
-        [this.http.get("../../assets/json/rows.json"),
-        this.http.get("../../assets/json/columns.json")]).subscribe((data)=>{
+        [this.http.get("assets/json/rows.json"),
+        this.http.get("assets/json/columns.json")]).subscribe((data)=>{
         console.log(data);
         this.columns = data[1]['columns'];
         this.rows = data[0]['rows'];  
