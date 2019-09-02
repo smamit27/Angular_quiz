@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from './shared/message.service';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,23 +6,8 @@ import { of } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title: string = 'quiz';
-  hideOnQuizScreen: boolean = false;
-  apple = of(2,3,5);
-  constructor(private messageService: MessageService,private afAuth: AngularFireAuth,private router: Router){}
+  constructor() { }
+
   ngOnInit() {
-    this.afAuth.authState.subscribe(user =>{
-      console.log(user);
-      if(user.email !== null && user.email !== undefined){
-        this.router.navigate(['welcome']);
-
-      }
-    });
-     this.messageService.getMessage().subscribe((message) => {
-      if(message == 'true') {
-        this.hideOnQuizScreen = true;
-      }
-
-    });
   }
 }

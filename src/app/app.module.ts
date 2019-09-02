@@ -22,6 +22,7 @@ import { PhoneLoginComponent } from './phone-login/phone-login.component';
 import { httpIntercepterProviders } from './http-intercepter';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
+import { CarComponent } from './car/car.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ChildComponent } from './parent/child/child.component';
     LoaderComponent,
     PhoneLoginComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,

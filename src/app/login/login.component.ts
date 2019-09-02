@@ -59,6 +59,7 @@ export class LoginComponent implements OnInit {
   }
   dolinkedIn() {
     this.messageService.setPractice('practiceData');
+
     this.router.navigate(['parent']);   
   }
 }
