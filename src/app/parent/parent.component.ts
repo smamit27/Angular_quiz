@@ -11,9 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-
-
-  private ShareData: any;
+  public ShareData: any;
   columns: any;
   rows: any;
   private subscription :Array<Subscription> = [] ;
