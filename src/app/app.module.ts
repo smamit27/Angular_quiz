@@ -23,6 +23,8 @@ import { httpIntercepterProviders } from './http-intercepter';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { CarComponent } from './car/car.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { CarComponent } from './car/car.component';
     AppRoutingModule,ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule
