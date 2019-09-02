@@ -3,16 +3,16 @@
     <form #f="ngForm">
         <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
             <label for="firstname">firstname</label>
-            <input type="text" class="form-control" [(ngModel)]="user.firstname" ngModel name="firstname">
+            <input type="text" class="form-control" [(ngModel)]="user.firstname"  name="firstname">
         </div>
 
         <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
             <label for="firstname">Last Name</label>
-            <input type="text" class="form-control" [(ngModel)]="user.lastname" ngModel name="lastname">
+            <input type="text" class="form-control" [(ngModel)]="user.lastname"  name="lastname">
         </div>
         <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
             <label for="age">Age</label>
-            <input type="number" class="form-control" [(ngModel)]="user.age" ngModel name="age">
+            <input type="number" class="form-control" [(ngModel)]="user.age" name="age">
         </div>
         <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
             <button (click)=addUser(f) class="btn btn-success" *ngIf="addUserDetails">Add User</button>

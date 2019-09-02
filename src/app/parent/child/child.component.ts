@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 export class ChildComponent  {
   @Input() data: any;
   userdetail: Array<any> = [];
-  user: object = {
+  user: any = {
     firstname: "",
     lastname: "",
     age: ""
