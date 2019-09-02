@@ -1,3 +1,54 @@
-<p>child works!</p>
-{{data.name}}
-{{data.age}}
+<div class="fluid ">
+    <h3 class="col-12 ">Crud Example</h3>
+    <form #f="ngForm">
+        <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
+            <label for="firstname">firstname</label>
+            <input type="text" class="form-control" [(ngModel)]="user.firstname" ngModel name="firstname">
+        </div>
+
+        <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
+            <label for="firstname">Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="user.lastname" ngModel name="lastname">
+        </div>
+        <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" [(ngModel)]="user.age" ngModel name="age">
+        </div>
+        <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
+            <button (click)=addUser(f) class="btn btn-success" *ngIf="addUserDetails">Add User</button>
+            <button (click)=updateUser(f) class="btn btn-success" *ngIf="updateUserDetails">Update User</button>
+        </div>
+    </form>
+    <div class="col-12 col-sm-8 col-md-8 col-lg-6">
+        <div class="table-responsive table-responsive-sm">
+        <table class="table table-dark " *ngIf="!showUserDetail">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userdata of userdetail;let i = index">
+                    <td>{{userdata.firstname}}</td>
+                    <td>{{userdata.lastname}}</td>
+                    <td>{{userdata.age}} </td>
+                    <td (click)="editUser(userdata)">Edit</td>
+                    <td (click)="deleteUser(i)"> Delete</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<hr >
+<div class="col-12 col-sm-8 col-md-8 col-lg-6">
+    <h3>Change Detection Example</h3>
+
+    <h6>Before Change Detection(Default) {{data.name}}--{{data.age}}
+    </h6>
+    <h6>Change Detection(onPush) {{data.name}}--{{data.age}}</h6>
+</div>

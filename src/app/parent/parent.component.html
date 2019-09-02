@@ -1,23 +1,26 @@
-
 <div class="fluid pr-1 pl-1 form-action mt-3">
-<p>parent works!</p>
-<app-child [data]="ShareData"></app-child>
-<button class="btn btn-primary mr-3" (click)="change()">Change</button>
-<button class="btn btn-primary" (click)="changeDetection()">Change Detection</button>
+  <app-child [data]="ShareData"></app-child>
+  <div class="col-12 col-sm-8 col-md-8 col-lg-6">
+  <button class="btn btn-primary mr-3" (click)="change()">Change</button>
+  <button class="btn btn-primary" (click)="changeDetection()">Change Detection</button>
+</div>
+<hr>
+<div class="col-12 col-sm-8 col-md-8 col-lg-6">
+    <h3>Fork Join Example</h3>
 
-<h1>Foke Join Example</h1>
-<table class="table table-hover">
-    <thead>
-      <tr *ngFor="let col of columns"> 
-        <th scope="col">{{col.name}}</th>
-        <th scope="col">{{col.age}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of rows">
-        <td>{{row.name}}</td>
-        <td>{{row.age}}</td>   
-      </tr>
-    </tbody>
-  </table>
+    <table class="table table-bordered">
+      <thead>
+        <tr *ngFor="let col of columns">
+          <th scope="col">{{col.name}}</th>
+          <th scope="col">{{col.age}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows">
+          <td>{{row.name}}</td>
+          <td>{{row.age}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
