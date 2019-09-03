@@ -24,6 +24,8 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { CarComponent } from './car/car.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { RegistertableComponent } from './registertable/registertable.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     PhoneLoginComponent,
     ParentComponent,
     ChildComponent,
-    CarComponent
+    CarComponent,
+    RegistertableComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

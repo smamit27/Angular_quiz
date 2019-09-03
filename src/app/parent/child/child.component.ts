@@ -15,7 +15,7 @@ export class ChildComponent  {
   user: any = {
     firstname: "",
     lastname: "",
-    age: ""
+    age: "",query:''
   };
   /* Type Check Here */
   addUserDetails: boolean = true;

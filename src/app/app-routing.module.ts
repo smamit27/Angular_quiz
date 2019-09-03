@@ -9,6 +9,7 @@ import { ConfirmpasswordComponent } from './confirmpassword/confirmpassword.comp
 import { AuthGuard } from './shared/auth-guard.service';
 import { PhoneLoginComponent } from './phone-login/phone-login.component';
 import { ParentComponent } from './parent/parent.component';
+import { RegistertableComponent } from './registertable/registertable.component';
 
 const routes: Routes = [
   {path: 'welcome',component: WelcomeComponent},
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   {path: 'parent',component: ParentComponent},
   {path: 'resetPassword',component: ResetPasswordComponent},
+  {path: 'registration',component: RegistertableComponent},
+
   {path: 'confirmPassword',canActivate:[AuthGuard],component: ConfirmpasswordComponent},
   {path: '**', component: LoginComponent},
 ];
