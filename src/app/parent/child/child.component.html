@@ -5,47 +5,25 @@
 
         <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
             <label for="firstname">firstname</label>
-            <input type="text" class="form-control" [(ngModel)]="user.firstname"  name="firstname">
+            <input type="text" class="form-control" [(ngModel)]="user.firstname"  ngModel name="firstname" required>
         </div>
 
         <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
             <label for="firstname">Last Name</label>
-            <input type="text" class="form-control" [(ngModel)]="user.lastname"  name="lastname">
+            <input type="text" class="form-control" [(ngModel)]="user.lastname" ngModel name="lastname" required>
         </div>
         <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
             <label for="age">Age</label>
-            <input type="number" class="form-control" [(ngModel)]="user.age" name="age">
+            <input type="number" class="form-control" [(ngModel)]="user.age" ngModel name="age" required>
         </div>
         <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4">
-            <button (click)=addUser(f) class="btn btn-success" *ngIf="addUserDetails">Add User</button>
+            <button (click)=addUser(f) class="btn btn-success" [disabled]="!f.valid" *ngIf="addUserDetails">Add User</button>
             <button (click)=updateUser(f) class="btn btn-success" *ngIf="updateUserDetails">Update User</button>
         </div>
         <input type="text" class="form-control" placeholder="Search" [(ngModel)]="user.query" name="query" id="listSearch">
-
-        <div class="col-12 col-sm-8 col-md-8 col-lg-6">
-                <div class="table-responsive table-responsive-sm">
-                <table class="table table-dark " *ngIf="!showUserDetail">
-                    <thead>
-                        <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Age</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let userdata of userdetail | LockFilter: user.query;let i = index">
-                            <td>{{userdata.firstname}}</td>
-                            <td>{{userdata.lastname}}</td>
-                            <td>{{userdata.age}} </td>
-                            <td (click)="editUser(userdata)">Edit</td>
-                            <td (click)="deleteUser(i)"> Delete</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
+        <div class="col-12 col-sm-8 col-md-8 col-lg-6" *ngIf="!showUserDetail">
+            <app-registertable></app-registertable>
+        </div>
     </form>
 
 </div>

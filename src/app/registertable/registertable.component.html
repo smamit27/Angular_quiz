@@ -1,1 +1,22 @@
-<p>registertable works!</p>
+<div class="table-responsive table-responsive-sm mt-3">
+    <table class="table table-dark ">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let userdata of registrationData;let i = index">
+                <td>{{userdata.firstname}}</td>
+                <td>{{userdata.lastname}}</td>
+                <td>{{userdata.age}} </td>
+                <td (click)="editUser(userdata)">Edit</td>
+                <td (click)="deleteUser(i)"> Delete</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

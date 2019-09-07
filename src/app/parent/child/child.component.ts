@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
-export class ChildComponent  {
+export class ChildComponent implements OnInit {
   @Input() data: any;
   userdetail: Array<any> = [];
   user: any = {
@@ -17,6 +17,7 @@ export class ChildComponent  {
     lastname: "",
     age: "",query:''
   };
+  ngOnInit(){};
   /* Type Check Here */
   addUserDetails: boolean = true;
   updateUserDetails: boolean = false;
@@ -27,6 +28,7 @@ export class ChildComponent  {
       this.showUserDetail = false;
     }
     this.userdetail.push(formdata.value);
+    localStorage.setItem('Register',JSON.stringify(this.userdetail));
     formdata.reset();
   }
   editUser(data:any) {
